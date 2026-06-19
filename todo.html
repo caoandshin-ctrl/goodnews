@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>간단한 할일목록 (To-Do) - GoodNews</title>
+  <link rel="stylesheet" href="todo.css" />
+</head>
+<body>
+  <main class="todo-app">
+    <h1>할일목록</h1>
+
+    <form id="todoForm" class="todo-form" autocomplete="off">
+      <input id="newTodo" type="text" placeholder="새 할일을 입력하고 Enter를 누르세요" />
+      <button type="submit">추가</button>
+    </form>
+
+    <div class="controls">
+      <div class="filters">
+        <button data-filter="all" class="active">모두</button>
+        <button data-filter="active">진행중</button>
+        <button data-filter="completed">완료</button>
+      </div>
+      <button id="clearCompleted" class="clear">완료 항목 삭제</button>
+    </div>
+
+    <ul id="todoList" class="todo-list" aria-live="polite"></ul>
+
+    <p class="hint">로컬 브라우저 저장소(localStorage)를 사용해 항목이 보존됩니다.</p>
+  </main>
+
+  <script src="todo.js"></script>
+</body>
+</html>

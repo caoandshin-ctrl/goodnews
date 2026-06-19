@@ -1,0 +1,43 @@
+/* todo.css - simple styles for the To-Do app */
+:root{
+  --bg:#f5f7fa;
+  --card:#fff;
+  --accent:#2b6cb0;
+  --muted:#6b7280;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", "Malgun Gothic", sans-serif;
+  background:var(--bg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  padding:2rem;
+}
+.todo-app{
+  width:100%;
+  max-width:640px;
+  background:var(--card);
+  padding:1.25rem 1.5rem;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(17,24,39,0.06);
+}
+.todo-app h1{margin:0 0 0.75rem 0; font-size:1.25rem}
+.todo-form{display:flex; gap:0.5rem; margin-bottom:1rem}
+.todo-form input{flex:1; padding:0.6rem 0.75rem; border-radius:8px; border:1px solid #e5e7eb}
+.todo-form button{background:var(--accent); color:white; border:none; padding:0.55rem 0.9rem; border-radius:8px; cursor:pointer}
+.controls{display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:0.75rem}
+.filters{display:flex; gap:0.5rem}
+.filters button{background:transparent; border:1px solid transparent; padding:0.35rem 0.6rem; border-radius:8px; cursor:pointer}
+.filters button.active{background:var(--accent); color:white}
+.clear{background:transparent; border:1px solid #e5e7eb; padding:0.35rem 0.6rem; border-radius:8px; cursor:pointer}
+.todo-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:0.5rem}
+.todo-item{display:flex; align-items:center; gap:0.5rem; padding:0.6rem; border-radius:8px; border:1px solid #eef2f7}
+.todo-item.completed{opacity:0.6; text-decoration:line-through}
+.todo-item .text{flex:1}
+.todo-item .actions{display:flex; gap:0.5rem}
+.icon-btn{background:transparent; border:none; cursor:pointer; color:var(--muted)}
+.hint{font-size:0.85rem; color:var(--muted); margin-top:0.75rem}
+@media (max-width:480px){.todo-app{padding:1rem}}
