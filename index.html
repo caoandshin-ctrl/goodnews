@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>전도지 생성기</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- html2pdf CDN (PDF 다운로드용) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>전도지 생성기</h1>
+    <p>제목, 성경구절과 내용을 입력해 전단을 만들고 미리보기 또는 PDF로 저장하세요.</p>
+  </header>
+
+  <main class="container">
+    <section class="editor">
+      <label>제목
+        <input id="titleInput" type="text" placeholder="예: 우리를 위한 하나님의 사랑" />
+      </label>
+
+      <label>성경 구절 (한 줄)
+        <input id="verseInput" type="text" placeholder="예: 요한복음 3:16" />
+      </label>
+
+      <label>본문 (여러 줄)
+        <textarea id="bodyInput" rows="8" placeholder="전도지 내용을 입력하세요."></textarea>
+      </label>
+
+      <label>스타일
+        <select id="styleSelect">
+          <option value="classic">클래식(흰 배경)</option>
+          <option value="modern">모던(컬러 헤더)</option>
+          <option value="minimal">미니멀(검정/흰색)</option>
+        </select>
+      </label>
+
+      <div class="buttons">
+        <button id="previewBtn">미리보기</button>
+        <button id="downloadPdfBtn">PDF로 저장</button>
+        <button id="printBtn">인쇄하기</button>
+        <button id="clearBtn">초기화</button>
+      </div>
+    </section>
+
+    <section class="preview">
+      <h2>미리보기</h2>
+      <div id="tractPreview" class="tract classic">
+        <h3 id="pvTitle">전도지 제목</h3>
+        <p id="pvVerse" class="verse">요한복음 3:16</p>
+        <div id="pvBody" class="body">여기에 전도지 내용이 표시됩니다.</div>
+        <footer class="foot">
+          <p>문의: 교회 연락처 / 웹사이트</p>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <footer class="small">
+    <p>이 프로그램은 개인용 전도지 제작을 돕기 위해 제공됩니다.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
